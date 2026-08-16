@@ -26,10 +26,10 @@ console.log(humanChoice);
 let humanScore = 0, computerScore = 0;
 
 function playRound (humanChoice, computerChoice) {
-    humanChoice=humanChoice.toLowerCase();
+    humanChoice = humanChoice.toLowerCase();
     if (humanChoice == computerChoice) {
         alert("It's a tie!");
-    } else if (computerChoice = "rock")
+    } else if (computerChoice == "rock") {
         switch(humanChoice) {
             case "paper":
                 win(humanChoice, computerChoice);
@@ -38,6 +38,26 @@ function playRound (humanChoice, computerChoice) {
                 lose(computerChoice, humanChoice);
                 break;
         }
+    } else if (computerChoice == "paper") {
+        switch(humanChoice) {
+            case "scissors":
+                win(humanChoice, computerChoice);
+                break;
+            case "rock":
+                lose(computerChoice,humanChoice);
+                break;
+        }
+    } else {
+        switch(humanChoice) {
+            case "rock":
+                win(humanChoice,computerChoice);
+                break;
+            case "paper":
+                lose(computerChoice, humanChoice);
+                break;
+        }
+    }
+
 }
 
 function win(humanChoice,computerChoice) {
@@ -51,3 +71,6 @@ function lose(computerChoice, humanChoice) {
 }
 
 playRound(humanChoice,computerChoice);
+
+console.log(humanScore);
+console.log(computerScore);
