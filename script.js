@@ -29,7 +29,7 @@ function playRound (humanChoice, computerChoice) {
     humanChoice=humanChoice.toLowerCase();
     if (humanChoice == computerChoice) {
         alert("It's a tie!");
-    } else if computerChoice = "rock"
+    } else if (computerChoice = "rock")
         switch(humanChoice) {
             case "paper":
                 win(humanChoice, computerChoice);
@@ -50,4 +50,4 @@ function lose(computerChoice, humanChoice) {
     computerScore++;
 }
 
-playround(humanChoice,computerChoice);
+playRound(humanChoice,computerChoice);
