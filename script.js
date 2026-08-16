@@ -1,3 +1,5 @@
+let humanScore = 0, computerScore = 0;
+
 function getComputerChoice () {
     let choice = Math.random();
     if (choice <= 0.3) {
@@ -58,13 +60,11 @@ function lose(computerChoice, humanChoice) {
 }
 
 function playGame() {
-    let humanScore = 0, computerScore = 0;
-    let computerChoice = getComputerChoice();
-    let humanChoice = getHumanChoice ();
-
+    for(let i = 1; i<=5;i++){
+        let computerChoice = getComputerChoice();
+        let humanChoice = getHumanChoice ();
+        playRound(humanChoice, computerChoice);
+    }
 }
 
-playRound(humanChoice,computerChoice);
-
-console.log(humanScore);
-console.log(computerScore);
+playGame();
