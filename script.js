@@ -1,5 +1,3 @@
-console.log("Hello world");
-
 function getComputerChoice () {
     return Math.random();
 }
@@ -57,7 +55,6 @@ function playRound (humanChoice, computerChoice) {
                 break;
         }
     }
-
 }
 
 function win(humanChoice,computerChoice) {
