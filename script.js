@@ -1,27 +1,17 @@
 function getComputerChoice () {
-    return Math.random();
+    let choice = Math.random();
+    if (choice <= 0.3) {
+            choice = "rock";
+    } else if (choice <=0.6) {
+        choice = "paper";
+    } else choice = "scissors";
+    return choice;
 }
-
-let computerChoice = getComputerChoice ();
-
-if (computerChoice <= 0.3) {
-    computerChoice = "rock";
-} else if (computerChoice <=0.6) {
-    computerChoice = "paper";
-} else computerChoice = "scissors";
-
-console.log(computerChoice);
 
 function getHumanChoice () {
-    let a = prompt("Rock, Paper or Scissors");
+    let a = prompt("Rock, Paper or Scissors").toLowerCase();
     return a;
 }
-
-let humanChoice = getHumanChoice ();
-
-console.log(humanChoice);
-
-let humanScore = 0, computerScore = 0;
 
 function playRound (humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
@@ -65,6 +55,13 @@ function win(humanChoice,computerChoice) {
 function lose(computerChoice, humanChoice) {
     alert(`You lose! ${computerChoice} beats ${humanChoice}`)
     computerScore++;
+}
+
+function playGame() {
+    let humanScore = 0, computerScore = 0;
+    let computerChoice = getComputerChoice();
+    let humanChoice = getHumanChoice ();
+
 }
 
 playRound(humanChoice,computerChoice);
