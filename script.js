@@ -7,10 +7,10 @@ function getComputerChoice () {
 let computerChoice = getComputerChoice ();
 
 if (computerChoice <= 0.3) {
-    computerChoice = "Rock";
+    computerChoice = "rock";
 } else if (computerChoice <=0.6) {
-    computerChoice = "Paper";
-} else computerChoice = "Scissors";
+    computerChoice = "paper";
+} else computerChoice = "scissors";
 
 console.log(computerChoice);
 
@@ -24,3 +24,30 @@ let humanChoice = getHumanChoice ();
 console.log(humanChoice);
 
 let humanScore = 0, computerScore = 0;
+
+function playRound (humanChoice, computerChoice) {
+    humanChoice=humanChoice.toLowerCase();
+    if (humanChoice == computerChoice) {
+        alert("It's a tie!");
+    } else if computerChoice = "rock"
+        switch(humanChoice) {
+            case "paper":
+                win(humanChoice, computerChoice);
+                break;
+            case "scissors":
+                lose(computerChoice, humanChoice);
+                break;
+        }
+}
+
+function win(humanChoice,computerChoice) {
+    alert(`You win! ${humanChoice} beats ${computerChoice}`)
+    humanScore++;
+}
+
+function lose(computerChoice, humanChoice) {
+    alert(`You lose! ${computerChoice} beats ${humanChoice}`)
+    computerScore++;
+}
+
+playround(humanChoice,computerChoice);
