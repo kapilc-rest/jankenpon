@@ -84,6 +84,9 @@ function playGame() {
 // playGame();
 
 function getComputerBias() {
+    rock = 0;
+    paper = 0;
+    scissors = 0;
     for(let i = 0; i<1000; i++) {
         getComputerChoice();
     }
@@ -102,7 +105,7 @@ function getComputerBias() {
 }
 
 function showComputerBias() {
-    let rockWinNum = 0, paperWinNum = 0, scissonWinNum = 0;
+    let rockWinNum = 0, paperWinNum = 0, scissorsWinNum = 0;
     for(let i=0;i<1000;i++) {
         let c = getComputerBias();
         switch(c) {
@@ -113,13 +116,13 @@ function showComputerBias() {
                 paperWinNum++;
                 break;
             case "scissors":
-                scissonWinNum++;
+                scissorsWinNum++;
                 break;
         }
     }
     console.log("Total Rock win: "+ rockWinNum);
     console.log("Total Paper win: " + paperWinNum);
-    console.log("Total Scissors win: "+ scissonWinNum);
+    console.log("Total Scissors win: "+ scissorsWinNum);
 }
 
 showComputerBias();
