@@ -1,12 +1,19 @@
 let humanScore = 0, computerScore = 0;
 
+let rock = 0, paper = 0, scissors = 0;
+
 function getComputerChoice () {
     let choice = Math.random();
     if (choice <= 0.3) {
             choice = "rock";
+            rock++;
     } else if (choice <=0.6) {
         choice = "paper";
-    } else choice = "scissors";
+        paper++;
+    } else { 
+        choice = "scissors";
+        scissors++;
+    }
     return choice;
 }
 
@@ -74,7 +81,48 @@ function playGame() {
 
 }
 
-playGame();
+// playGame();
 
-console.log("Your score: " + humanScore);
-console.log("Computer's score: " + computerScore);
+function getComputerBias() {
+    for(let i = 0; i<1000; i++) {
+        getComputerChoice();
+    }
+    //console.log("Rock: " + rock/1000.0 + "%");
+    //console.log("Paper: " + paper/1000.0  + "%");
+    //console.log("Scissors: "+ scissors/1000.0 + "%" );
+    let big = "";
+    if (rock >= paper && rock >= scissors) {
+        big = "rock";
+    } else if (paper >= rock && paper >= scissors) {
+        big = "paper";
+    } else {
+        big = "scissors";
+    }
+    return big;
+}
+
+function showComputerBias() {
+    let rockWinNum = 0, paperWinNum = 0, scissonWinNum = 0;
+    for(let i=0;i<1000;i++) {
+        let c = getComputerBias();
+        switch(c) {
+            case "rock":
+                rockWinNum++;
+                break;
+            case "paper": 
+                paperWinNum++;
+                break;
+            case "scissors":
+                scissonWinNum++;
+                break;
+        }
+    }
+    console.log("Total Rock win: "+ rockWinNum);
+    console.log("Total Paper win: " + paperWinNum);
+    console.log("Total Scissors win: "+ scissonWinNum);
+}
+
+showComputerBias();
+
+//console.log("Your score: " + humanScore);
+//console.log("Computer's score: " + computerScore);
