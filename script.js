@@ -4,10 +4,10 @@ let rock = 0, paper = 0, scissors = 0;
 
 function getComputerChoice () {
     let choice = Math.random();
-    if (choice <= 0.3) {
+    if (choice <= 0.33) {
             choice = "rock";
             rock++;
-    } else if (choice <=0.6) {
+    } else if (choice <=0.66) {
         choice = "paper";
         paper++;
     } else { 
