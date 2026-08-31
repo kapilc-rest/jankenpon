@@ -135,5 +135,16 @@ rockButton.addEventListener("click",() => playGame("rock"));
 paperButton.addEventListener("click",() => playGame("paper"));
 scissorsButton.addEventListener("click",() => playGame("scissors"));
 
+function addScore() {
+    let human = document.createElement("div");
+    human.textContent = `Your Score: ${humanScore}`;
+    let computer = document.createElement("div");
+    computer.textContent = `Computer Score: ${computerScore}`;
+    div.append(human, computer);
+}
+
+let button = document.querySelectorAll("button");
+button.addEventListener("click", addScore);
+
 let result = document.querySelector("div.result");
 
