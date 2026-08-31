@@ -143,8 +143,10 @@ function addScore() {
     div.append(human, computer);
 }
 
-let button = document.querySelectorAll("button");
-button.addEventListener("click", addScore);
+let buttons = document.querySelectorAll("button");
+buttons.forEach(button => {
+    button.addEventListener("click", addScore) 
+});
 
 let result = document.querySelector("div.result");
 
