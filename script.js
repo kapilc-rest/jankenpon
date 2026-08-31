@@ -134,3 +134,5 @@ let paperButton = document.querySelector("#paper");
 let scissorsButton = document.querySelector("#scissors");
 
 rockButton.addEventListener("click",playGame);
+paperButton.addEventListener("click",playGame);
+scissorsButton.addEventListener("click",playGame);
