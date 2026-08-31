@@ -1,6 +1,6 @@
 let humanScore = 0, computerScore = 0;
 
-let rock = 0, paper = 0, scissors = 0;
+//let rock = 0, paper = 0, scissors = 0;
 
 function getComputerChoice () {
     let choice = Math.random();
@@ -17,15 +17,15 @@ function getComputerChoice () {
     return choice;
 }
 
-function getHumanChoice () {
+/*function getHumanChoice () {
     let a = prompt("Rock, Paper or Scissors").toLowerCase();
     return a;
-}
+}*/
 
 function playRound (humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
+    //humanChoice = humanChoice.toLowerCase();
     if (humanChoice == computerChoice) {
-        alert("It's a tie!");
+        result.textContent = "It's a tie!";
     } else if (computerChoice == "rock") {
         switch(humanChoice) {
             case "paper":
@@ -66,17 +66,17 @@ function lose(computerChoice, humanChoice) {
     computerScore++;
 }
 
-function playGame() {
+function playGame(choice) {
         let computerChoice = getComputerChoice();
-        let humanChoice = getHumanChoice ();
+        let humanChoice = choice;
+        console.log(humanChoice)
         playRound(humanChoice, computerChoice);
 
     if (humanScore == computerScore) {
-        console.log("Wow! It's a tie!");
+        result.textContent = "Wow! It's a tie!";
     } else if (humanScore > computerScore) {
-        console.log("Yayy! You win!!");
-    } else console.log("Computer says: I win. Human.");
-
+        result.textContent = "Yayy! You win!!";
+    } else result.textContent = "Computer says: I win. Human.";
 }
 
 //playGame();
@@ -133,6 +133,9 @@ let rockButton = document.querySelector("#rock");
 let paperButton = document.querySelector("#paper");
 let scissorsButton = document.querySelector("#scissors");
 
-rockButton.addEventListener("click",playGame);
+rockButton.addEventListener("click",() => playGame("rock"));
 paperButton.addEventListener("click",playGame);
 scissorsButton.addEventListener("click",playGame);
+
+let result = document.querySelector("div.result");
+
