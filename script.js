@@ -67,11 +67,11 @@ function lose(computerChoice, humanChoice) {
 }
 
 function playGame() {
-    for(let i = 1; i<=5;i++){
+    /*for(let i = 1; i<=5;i++){
         let computerChoice = getComputerChoice();
         let humanChoice = getHumanChoice ();
         playRound(humanChoice, computerChoice);
-    }
+    }*/
 
     if (humanScore == computerScore) {
         console.log("Wow! It's a tie!");
