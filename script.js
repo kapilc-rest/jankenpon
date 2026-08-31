@@ -72,9 +72,10 @@ function playGame(choice) {
 
     /*if (humanScore == computerScore) {
         result.textContent = "Wow! It's a tie!";
-    } else if (humanScore > computerScore) {
+    } else*/
+    if (humanScore == 5) {
         result.textContent = "Yayy! You win!!";
-    } else result.textContent = "Computer says: I win. Human.";*/
+    } else if(computerScore == 5) result.textContent = "Computer says: I win. Human.";
 }
 
 //playGame();
@@ -135,18 +136,20 @@ rockButton.addEventListener("click",() => playGame("rock"));
 paperButton.addEventListener("click",() => playGame("paper"));
 scissorsButton.addEventListener("click",() => playGame("scissors"));
 
-function addScore() {
-    let human = document.createElement("div");
+function addScore() { 
     human.textContent = `Your Score: ${humanScore}`;
-    let computer = document.createElement("div");
     computer.textContent = `Computer Score: ${computerScore}`;
-    div.append(human, computer);
+    score.append(human, computer);
 }
 
 let buttons = document.querySelectorAll("button");
 buttons.forEach(button => {
-    button.addEventListener("click", addScore) 
+    button.addEventListener("click", () => addScore()) 
 });
 
 let result = document.querySelector("div.result");
+
+let score = document.querySelector("div.score");
+let human = document.createElement("div");
+let computer = document.createElement("div");
 
