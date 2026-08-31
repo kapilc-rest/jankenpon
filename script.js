@@ -67,11 +67,9 @@ function lose(computerChoice, humanChoice) {
 }
 
 function playGame() {
-    /*for(let i = 1; i<=5;i++){
         let computerChoice = getComputerChoice();
         let humanChoice = getHumanChoice ();
         playRound(humanChoice, computerChoice);
-    }*/
 
     if (humanScore == computerScore) {
         console.log("Wow! It's a tie!");
@@ -83,7 +81,7 @@ function playGame() {
 
 //playGame();
 
-function getComputerBias() {
+/*function getComputerBias() {
     rock = 0;
     paper = 0;
     scissors = 0;
@@ -102,9 +100,9 @@ function getComputerBias() {
         big = "scissors";
     }
     return big;
-}
+}*/
 
-function showComputerBias() {
+/*function showComputerBias() {
     let rockWinNum = 0, paperWinNum = 0, scissorsWinNum = 0;
     for(let i=0;i<100000;i++) {
         let c = getComputerBias();
@@ -123,9 +121,16 @@ function showComputerBias() {
     console.log("Total Rock: "+ rockWinNum);
     console.log("Total Paper: " + paperWinNum);
     console.log("Total Scissor: "+ scissorsWinNum);
-}
+}*/
 
-showComputerBias();
+//howComputerBias();
 
 //console.log("Your score: " + humanScore);
+
 //console.log("Computer's score: " + computerScore);
+
+let rockButton = document.querySelector("#rock");
+let paperButton = document.querySelector("#paper");
+let scissorsButton = document.querySelector("#scissors");
+
+rockButton.addEventListener("click",playGame);
