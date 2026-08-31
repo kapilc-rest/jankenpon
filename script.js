@@ -74,8 +74,8 @@ function playGame(choice) {
         result.textContent = "Wow! It's a tie!";
     } else*/
     if (humanScore == 5) {
-        result.textContent = "Yayy! You win!!";
-    } else if(computerScore == 5) result.textContent = "Computer says: I win. Human.";
+        matchResult.textContent = "Yayy! You win!!";
+    } else if(computerScore == 5) matchResult.textContent = "Computer says: I win. Human.";
 }
 
 //playGame();
@@ -152,4 +152,6 @@ let result = document.querySelector("div.result");
 let score = document.querySelector("div.score");
 let human = document.createElement("div");
 let computer = document.createElement("div");
+
+let matchResult = document.querySelector("#matchResult");
 
