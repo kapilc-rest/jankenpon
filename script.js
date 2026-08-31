@@ -6,13 +6,13 @@ function getComputerChoice () {
     let choice = Math.random();
     if (choice <= 1/3){
             choice = "rock";
-            rock++;
+            //rock++;
     } else if (choice <=2/3) {
         choice = "paper";
-        paper++;
+        //paper++;
     } else { 
         choice = "scissors";
-        scissors++;
+        //scissors++;
     }
     return choice;
 }
