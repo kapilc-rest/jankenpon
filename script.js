@@ -4,10 +4,10 @@ let rock = 0, paper = 0, scissors = 0;
 
 function getComputerChoice () {
     let choice = Math.random();
-    if (choice <= 0.33) {
+    if (choice <= 1/3){
             choice = "rock";
             rock++;
-    } else if (choice <=0.66) {
+    } else if (choice <=2/3) {
         choice = "paper";
         paper++;
     } else { 
@@ -81,7 +81,7 @@ function playGame() {
 
 }
 
-// playGame();
+//playGame();
 
 function getComputerBias() {
     rock = 0;
@@ -106,7 +106,7 @@ function getComputerBias() {
 
 function showComputerBias() {
     let rockWinNum = 0, paperWinNum = 0, scissorsWinNum = 0;
-    for(let i=0;i<1000;i++) {
+    for(let i=0;i<100000;i++) {
         let c = getComputerBias();
         switch(c) {
             case "rock":
@@ -120,9 +120,9 @@ function showComputerBias() {
                 break;
         }
     }
-    console.log("Total Rock win: "+ rockWinNum);
-    console.log("Total Paper win: " + paperWinNum);
-    console.log("Total Scissors win: "+ scissorsWinNum);
+    console.log("Total Rock: "+ rockWinNum);
+    console.log("Total Paper: " + paperWinNum);
+    console.log("Total Scissor: "+ scissorsWinNum);
 }
 
 showComputerBias();
