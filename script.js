@@ -75,7 +75,13 @@ function playGame(choice) {
     } else*/
     if (humanScore == 5) {
         matchResult.textContent = "Yayy! You win!!";
-    } else if(computerScore == 5) matchResult.textContent = "Computer says: I win. Human.";
+        humanScore = 0;
+        computerScore = 0;
+    } else if(computerScore == 5) {
+        matchResult.textContent = "Computer says: I win. Human.";
+        humanScore = 0;
+        computerScore = 0; 
+    }
 }
 
 //playGame();
